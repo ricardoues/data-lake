@@ -63,8 +63,9 @@ def process_song_data(spark, input_data, output_data):
                                 )
     
     # write songs table to parquet file 
-    dest = "{}/songs.parquet".format(output_data)
-    song_table.write.format("parquet").save(dest, mode="append")
+    dest = "{}/songs.parquet".format(output_data)    
+    song_table.write.partitionBy(['year', 'artist_id']).format("parquet").save(dest, mode="append")
+            
     
     
 
@@ -171,8 +172,8 @@ def process_log_data(spark, input_data, output_data):
     
     
     # write time table to parquet files 
-    dest = "{}/time_table.parquet".format(output_data)
-    time_table.write.format("parquet").save(dest, mode="append")
+    dest = "{}/time_table.parquet".format(output_data)    
+    time_table.write.format("parquet").partitionBy(['year', 'month']).save(dest, mode="append")
     
     
                                       
