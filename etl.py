@@ -49,6 +49,8 @@ def process_song_data(spark, input_data, output_data):
                                    col('artist_latitude').alias('latitude'), \
                                    col('artist_longitude').alias('longitude')                                  
                                   )
+
+    artists_table = artists_table.drop_duplicates(subset=['artist_id'])
     
     # write artists table to parquet files
     dest = "{}/artists.parquet".format(output_data)
@@ -61,6 +63,8 @@ def process_song_data(spark, input_data, output_data):
                                 'year', \
                                 'duration'
                                 )
+
+    song_table = song_table.drop_duplicates(subset=['song_id'])
     
     # write songs table to parquet file 
     dest = "{}/songs.parquet".format(output_data)    
@@ -94,6 +98,10 @@ def process_log_data(spark, input_data, output_data):
                                 'level'
                                )
     
+    # we decide to retain level information since that it can be useful 
+    # in order to find client typologies or any other insight
+    users_table = users_table.drop_duplicates(subset=['user_id', 'level'])
+                        
     
     # write users table to parquet files
     dest = "{}/users.parquet".format(output_data)
@@ -151,6 +159,9 @@ def process_log_data(spark, input_data, output_data):
                                        "location", col("userAgent").alias("user_agent")
                                       ) 
     
+    # It is not neccesary to remove duplicates since that 
+    # in theory there would be no duplicates due to the start_time column.
+                        
 
     # write songs table to parquet files partitioned by year and artist
     # the following link was very useful
@@ -169,7 +180,7 @@ def process_log_data(spark, input_data, output_data):
                                       F.dayofweek("start_time").alias("weekday")
                                      ) 
     
-    
+    time_table = time_table.drop_duplicates(subset=['start_time']) 
     
     # write time table to parquet files 
     dest = "{}/time_table.parquet".format(output_data)    
