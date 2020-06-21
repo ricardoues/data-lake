@@ -40,6 +40,23 @@ The above star schema was designed in this way due to the massive amount of data
 * Enabling dimensional tables to be easily updated
 * Enabling new facts to be easily added i.e. regularly or selectively
 
+## How to run the code 
+
+* Sign in for AWS services, go to [Amazon EMR Console](https://console.aws.amazon.com/elasticmapreduce/)
+* Select "Clusters" in the menu on the left, and click the "Create cluster" button.
+* Release: emr-5.20.0
+* Applications: Spark: Spark 2.4.0 on Hadoop 2.8.5 YARN with Ganglia 3.7.2 and Zeppelin 0.8.0
+* Instance type: m5.xlarge
+* Number of instance: 6
+
+I suggest to proceed with an EC2 key pair. Wait until the cluster has the following status: Waiting before moving on to the next step. After that connect to the master node using SSH and run the following commands: 
+
+
+
+
+
+
+
 
 ## References 
 
