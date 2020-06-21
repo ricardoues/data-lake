@@ -51,6 +51,11 @@ The above star schema was designed in this way due to the massive amount of data
 
 I suggest to proceed with an EC2 key pair. Wait until the cluster has the following status: Waiting before moving on to the next step. After that connect to the master node using SSH and run the following commands: 
 
+```bash
+sudo cp /etc/spark/conf/log4j.properties.template /etc/spark/conf/log4j.properties
+sudo sed -i 's/log4j.rootCategory=INFO, console/log4j.rootCategory=ERROR,console/' /etc/spark/conf/log4j.properties
+```
+
 
 
 
