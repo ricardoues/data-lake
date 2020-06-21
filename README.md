@@ -49,17 +49,37 @@ The above star schema was designed in this way due to the massive amount of data
 * Instance type: m5.xlarge
 * Number of instance: 6
 
-I suggest to proceed with an EC2 key pair. Wait until the cluster has the following status: Waiting before moving on to the next step. After that connect to the master node using SSH and run the following commands: 
+I suggest to proceed with an EC2 key pair. Wait until the cluster has the following status: Waiting before moving on to the next step. After that connect to the master node using SSH and run the following commands in the terminal: 
 
 ```bash
 sudo cp /etc/spark/conf/log4j.properties.template /etc/spark/conf/log4j.properties
 sudo sed -i 's/log4j.rootCategory=INFO, console/log4j.rootCategory=ERROR,console/' /etc/spark/conf/log4j.properties
 ```
 
+Go to /etc/spark/conf/ and run the following commands in the terminal:
+
+```bash
+sudo cp spark-env.sh spark-env.sh.bkp
+sudo sed -i -e '$a\export PYSPARK_PYTHON=/usr/bin/python3' /etc/spark/conf/spark-env.sh
+```
+
+Next, we install configparser and pandas python packages with the following command: 
+
+```bash
+sudo python3 -m  pip install configparser pandas
+```
+
+Finally, we will clone the repository and submit the spark script with the following commands: 
+
+```bash
+git clone https://github.com/ricardoues/data-lake.git
+/usr/bin/spark-submit --verbose  --master yarn  etl.py 
+```
+
+The spark script takes around 2 hours to finish.
 
 
-
-
+**Note**: You must switch your zone to us-west-2 because this might be a restriction access to the log files in S3 bucket.
 
 
 
