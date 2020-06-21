@@ -8,7 +8,7 @@ As their data engineer, you are tasked with building a Data Lake that extracts t
 
 ## Discussion 
 
-Data warehouses are core components in data science, they are optimized for queries and are used for reporting and data analysis. In this sense, Sparkify need to put attention to the consumer behaviour in order to do the following analysis: 
+Data lakes are core components in data science, according to databricks a data lake is 
 
 * Statistics about songs, users, and artists
 * Predict customer churn 
