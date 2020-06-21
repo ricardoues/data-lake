@@ -7,7 +7,9 @@ A music streaming startup, Sparkify, has grown their user base and song database
 As their data engineer, you are tasked with building a Data Lake that extracts their data from S3, processes them using Spark, and loads the data back into S3 as a set of dimensional tables. This will allow their analytics team to continue finding insights in order to improve the recommendation system which is the core of the sparkify's app.
 
 ## Files 
+
 [dl.cfg](https://raw.githubusercontent.com/ricardoues/data-lake/master/dl.cfg)
+
 [etl.py](https://raw.githubusercontent.com/ricardoues/data-lake/master/etl.py)
 
 ## Discussion 
