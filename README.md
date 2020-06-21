@@ -6,6 +6,10 @@ A music streaming startup, Sparkify, has grown their user base and song database
 
 As their data engineer, you are tasked with building a Data Lake that extracts their data from S3, processes them using Spark, and loads the data back into S3 as a set of dimensional tables. This will allow their analytics team to continue finding insights in order to improve the recommendation system which is the core of the sparkify's app.
 
+## Files 
+[dl.cfg](https://raw.githubusercontent.com/ricardoues/data-lake/master/dl.cfg)
+[etl.py](https://raw.githubusercontent.com/ricardoues/data-lake/master/etl.py)
+
 ## Discussion 
 
 Data lakes are core components in data science, according to databricks a data lake is centralized data repository that is capable of storing both structured data and non-structured data such as video or audio. Data lakes are often used to consolidate all of an organization's data in a central location, where it can be saved as is, without the need to impose a schema, it can be very convenient in advanced analytics application such as natural language processing or computer vision. The advantages of using Data Lakes are follows:  
@@ -38,4 +42,5 @@ The above star schema was designed in this way due to the massive amount of data
 ## References 
 
 https://databricks.com/discover/data-lakes/introduction
+https://www.datasciencecentral.com/profiles/blogs/what-are-data-lakes
 https://www.ibmbigdatahub.com/blog/charting-data-lake-using-data-models-schema-read-and-schema-write
