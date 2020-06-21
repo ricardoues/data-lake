@@ -8,7 +8,7 @@ As their data engineer, you are tasked with building a Data Lake that extracts t
 
 ## Discussion 
 
-Data lakes are core components in data science, according to databricks a data lake is 
+Data lakes are core components in data science, according to databricks a data lake is centralized data repository that is capable of storing both structured data and non-structured data such as video or audio. Data lakes are often used to consolidate all of an organization's data in a central location, where it can be saved as is, without the need to impose a schema and  
 
 * Statistics about songs, users, and artists
 * Predict customer churn 
@@ -28,7 +28,7 @@ The schema includes the following tables:
 The above star schema was designed in this way due to the massive amount of data in the Sparkify app. The advantanges of this schema are shown as follows:
 
 * Easily understood
-* Queries run faster than they do against an OLTP system. 
+* Queries run faster. 
 * Enabling dimensional tables to be easily updated
 * Enabling new facts to be easily added i.e. regularly or selectively
 
