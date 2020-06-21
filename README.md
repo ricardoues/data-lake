@@ -8,11 +8,13 @@ As their data engineer, you are tasked with building a Data Lake that extracts t
 
 ## Discussion 
 
-Data lakes are core components in data science, according to databricks a data lake is centralized data repository that is capable of storing both structured data and non-structured data such as video or audio. Data lakes are often used to consolidate all of an organization's data in a central location, where it can be saved as is, without the need to impose a schema and  
+Data lakes are core components in data science, according to databricks a data lake is centralized data repository that is capable of storing both structured data and non-structured data such as video or audio. Data lakes are often used to consolidate all of an organization's data in a central location, where it can be saved as is, without the need to impose a schema, it can be very convenient in advanced analytics application such as natural language processing or computer vision. The advantages of using Data Lakes are follows:  
 
-* Statistics about songs, users, and artists
-* Predict customer churn 
-* Build recommendation systems 
+* Low cost
+* Flexibility 
+* Scalability
+* Allows storage of the raw data needed for machine learning and deep learning applications
+
 
 The schema includes the following tables: 
 
@@ -28,13 +30,12 @@ The schema includes the following tables:
 The above star schema was designed in this way due to the massive amount of data in the Sparkify app. The advantanges of this schema are shown as follows:
 
 * Easily understood
-* Queries run faster. 
+* Queries run faster since that there is no need to join more than two dataframes. 
 * Enabling dimensional tables to be easily updated
 * Enabling new facts to be easily added i.e. regularly or selectively
 
 
 ## References 
 
-http://gkmc.utah.edu/ebis_class/2003s/Oracle/DMB26/A73318/schemas.htm
-
-https://www.quora.com/What-does-a-star-schema-do-What-purpose-does-it-serve
+https://databricks.com/discover/data-lakes/introduction
+https://www.ibmbigdatahub.com/blog/charting-data-lake-using-data-models-schema-read-and-schema-write
