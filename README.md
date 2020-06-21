@@ -86,5 +86,7 @@ The spark script takes around 2 hours to finish.
 ## References 
 
 https://databricks.com/discover/data-lakes/introduction
+
 https://www.datasciencecentral.com/profiles/blogs/what-are-data-lakes
+
 https://www.ibmbigdatahub.com/blog/charting-data-lake-using-data-models-schema-read-and-schema-write
